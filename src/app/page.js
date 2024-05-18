@@ -1,6 +1,9 @@
 import Link from "next/link";
 
-const links = [{ name: "week-2", href: "/week-2" }];
+const links = [
+    { name: "week-2", href: "/week-2" },
+    { name: "week-3", href: "/week-3" },
+];
 
 export default function Home() {
     return (
