@@ -3,6 +3,7 @@ import Link from "next/link";
 const links = [
     { name: "week-2", href: "/week-2" },
     { name: "week-3", href: "/week-3" },
+    { name: "week-4", href: "/week-4" },
 ];
 
 export default function Home() {

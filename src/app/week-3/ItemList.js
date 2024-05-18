@@ -1,7 +1,7 @@
 import React from "react";
 import Item from "./Item";
 
-const shoppingList = [
+export const shoppingList = [
     {
         name: "milk, 4 L",
         quantity: 1,

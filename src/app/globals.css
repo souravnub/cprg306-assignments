@@ -5,3 +5,9 @@
 body {
     @apply bg-white dark:bg-black text-black  dark:text-white  container px-2;
 }
+input {
+    @apply border border-neutral-500  bg-neutral-100 dark:bg-slate-900 text-black dark:text-white p-3 rounded-md block;
+}
+select {
+    @apply dark:bg-slate-900 bg-neutral-100 text-black dark:text-white block p-3 border border-neutral-100 rounded-lg;
+}
