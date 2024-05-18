@@ -11,12 +11,13 @@ export default function Home() {
             <ol className="mt-2">
                 {links.map((link) => {
                     return (
-                        <Link
-                            key={link.href}
-                            className="text-blue-400 hover:underline"
-                            href={link.href}>
-                            {link.name}
-                        </Link>
+                        <li key={link.href}>
+                            <Link
+                                className="text-blue-400 hover:underline"
+                                href={link.href}>
+                                {link.name}
+                            </Link>
+                        </li>
                     );
                 })}
             </ol>
