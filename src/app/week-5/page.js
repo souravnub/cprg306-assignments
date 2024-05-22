@@ -27,7 +27,6 @@ const Week5 = () => {
                             name="sort"
                             class="hidden peer"
                             onChange={handleOptionChange}
-                            aria-selected={sortBy === "name"}
                         />
                         <label
                             for="name"
@@ -46,7 +45,6 @@ const Week5 = () => {
                             name="sort"
                             class="hidden peer"
                             onChange={handleOptionChange}
-                            aria-selected={sortBy === "category"}
                         />
                         <label
                             for="category"
@@ -65,7 +63,6 @@ const Week5 = () => {
                             name="sort"
                             class="hidden peer"
                             onChange={handleOptionChange}
-                            aria-selected={sortBy === "seperate"}
                         />
                         <label
                             for="seperate"

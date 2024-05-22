@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { shoppingList } from "../week-3/ItemList";
+import shoppingList from "../week-3/data.js";
 
 const NewItem = () => {
     const [name, setName] = useState("");
