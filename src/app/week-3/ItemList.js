@@ -1,7 +1,7 @@
 import React from "react";
 import Item from "./Item";
-import seperateByCategories from "./utils/seperateByCategories";
-import sortItems from "./utils/sortItems";
+import seperateByCategories from "../utils/seperateByCategories";
+import sortItems from "../utils/sortItems";
 
 const ItemList = ({ items, sortBy = null }) => {
     if (sortBy === "seperate") {
@@ -12,7 +12,7 @@ const ItemList = ({ items, sortBy = null }) => {
                     <ul>
                         {items.map((item) => (
                             <li key={item.id}>
-                                <Item qty={item.quantity} {...item} />
+                                <Item {...item} />
                             </li>
                         ))}
                     </ul>
@@ -26,7 +26,7 @@ const ItemList = ({ items, sortBy = null }) => {
             <ul>
                 {sortItems(items, sortBy).map((item) => (
                     <li key={item.id || item.name}>
-                        <Item qty={item.quantity} {...item} />
+                        <Item {...item} />
                     </li>
                 ))}
             </ul>
@@ -37,7 +37,7 @@ const ItemList = ({ items, sortBy = null }) => {
         <ul>
             {items.map((item) => (
                 <li key={item.id || item.name}>
-                    <Item qty={item.quantity} {...item} />
+                    <Item {...item} />
                 </li>
             ))}
         </ul>

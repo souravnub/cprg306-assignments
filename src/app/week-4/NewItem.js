@@ -1,33 +1,31 @@
 "use client";
 import React, { useState } from "react";
-import shoppingList from "../week-3/data.js";
 
-const NewItem = () => {
+const NewItem = ({ categories, handleSubmit }) => {
     const [name, setName] = useState("");
     const [icon, setIcon] = useState("");
-    const [qty, setQty] = useState(1);
+    const [quantity, setQuantity] = useState(1);
     const [category, setCategory] = useState("produce");
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        const item = { icon, qty, name, category };
-        console.log(item);
-        window.alert(JSON.stringify(item));
+    function genIcon() {
+        setIcon("🍊");
+    }
 
-        setName("");
+    function clear() {
         setIcon("");
-        setQty(1);
+        setName("");
+        setQuantity(1);
         setCategory("produce");
     }
 
-    function genIcon() {
-        setIcon((prev) => prev + "🍊");
-    }
-
     return (
-        <form onSubmit={handleSubmit} className="flex flex-col gap-3 max-w-lg">
+        <form
+            onSubmit={(e) =>
+                handleSubmit(e, { icon, name, quantity, category }, clear)
+            }
+            className="flex flex-col gap-3 max-w-lg">
             <div>
-                <label className="text-xs" for="icon">
+                <label className="text-xs" htmlFor="icon">
                     Icon
                 </label>
                 <input
@@ -35,7 +33,10 @@ const NewItem = () => {
                     id="icon"
                     type="text"
                     value={icon}
-                    onChange={(e) => setIcon(e.target.value)}
+                    maxLength={1}
+                    onChange={(e) => {
+                        setIcon(e.target.value);
+                    }}
                 />
                 <button
                     type="button"
@@ -46,13 +47,13 @@ const NewItem = () => {
             </div>
 
             <div>
-                <label className="text-xs" for="name">
+                <label className="text-xs" htmlFor="itemName">
                     Name
                 </label>
                 <input
                     required
                     className="w-full"
-                    id="name"
+                    id="itemName"
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
@@ -60,7 +61,7 @@ const NewItem = () => {
             </div>
 
             <div>
-                <label className="text-xs" for="qty">
+                <label className="text-xs" htmlFor="qty">
                     Quantity
                 </label>
                 <input
@@ -69,24 +70,22 @@ const NewItem = () => {
                     className="w-full"
                     id="qty"
                     type="number"
-                    value={qty}
-                    onChange={(e) => setQty(e.target.value)}
+                    value={quantity}
+                    onChange={(e) => setQuantity(e.target.value)}
                 />
             </div>
 
             <div>
-                <label className="text-xs" for="category">
+                <label className="text-xs" htmlFor="category">
                     Category
                 </label>
                 <select
+                    value={category}
                     onChange={(e) => setCategory(e.target.value)}
                     className="w-full">
-                    {shoppingList.map(({ category: ct }) => {
+                    {categories.map((ct = category) => {
                         return (
-                            <option
-                                key={ct}
-                                selected={category === ct}
-                                value={ct}>
+                            <option key={ct} value={ct}>
                                 {ct}
                             </option>
                         );

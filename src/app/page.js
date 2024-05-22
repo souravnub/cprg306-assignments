@@ -5,6 +5,7 @@ const links = [
     { name: "week-3", href: "/week-3" },
     { name: "week-4", href: "/week-4" },
     { name: "week-5", href: "/week-5" },
+    { name: "week-6", href: "/week-6" },
 ];
 
 export default function Home() {

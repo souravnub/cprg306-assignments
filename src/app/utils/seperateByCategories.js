@@ -1,7 +1,7 @@
-export default function seperateByCategories(items) {
-    const categories = Array.from(new Set(items.map((item) => item.category)));
+import getCategories from "./getCategories";
 
-    return categories.map((category) => {
+export default function seperateByCategories(items) {
+    return getCategories(items).map((category) => {
         let obj = { category, items: [] };
 
         items.forEach((item) => {

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Item = ({ icon, name, qty, category }) => {
+const Item = ({ icon, name, quantity, category }) => {
     return (
         <div className="flex items-center justify-between px-4 py-3 bg-white border-b  border-gray-200 dark:bg-gray-950 dark:border-gray-800">
             <div className="flex items-center space-x-4">
@@ -14,7 +14,7 @@ const Item = ({ icon, name, qty, category }) => {
                     </h3>
                     <div className="flex items-center text-xs space-x-1">
                         <p className="text-gray-500 dark:text-gray-400">
-                            Quantity: {qty}
+                            Quantity: {quantity}
                         </p>
                         <span className="text-gray-400 dark:text-gray-500">
                             |
