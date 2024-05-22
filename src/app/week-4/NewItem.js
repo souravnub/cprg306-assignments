@@ -83,7 +83,10 @@ const NewItem = () => {
                     className="w-full">
                     {shoppingList.map(({ category: ct }) => {
                         return (
-                            <option selected={category === ct} value={ct}>
+                            <option
+                                key={ct}
+                                selected={category === ct}
+                                value={ct}>
                                 {ct}
                             </option>
                         );
