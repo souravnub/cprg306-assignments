@@ -1,4 +1,4 @@
-export default [
+const data = [
     {
         name: "milk, 4 L",
         quantity: 1,
@@ -72,3 +72,4 @@ export default [
         icon: "🧼",
     },
 ];
+export default data;

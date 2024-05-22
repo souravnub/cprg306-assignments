@@ -10,6 +10,8 @@ const Week5 = () => {
         setSortBy(e.target.value);
     }
 
+    const inputs = ["name", "category", "seperate"];
+
     return (
         <main className="py-2">
             <h1 className="font-semibold text-2xl mb-4">Shopping List</h1>
@@ -18,59 +20,29 @@ const Week5 = () => {
                 Sort By
             </h3>
             <ul class="items-center text-sm font-medium flex  w-min border border-gray-200 rounded-lg bg-slate-700">
-                <li class="border-gray-600">
-                    <div class="flex items-center">
-                        <input
-                            id="name"
-                            type="radio"
-                            value="name"
-                            name="sort"
-                            class="hidden peer"
-                            onChange={handleOptionChange}
-                        />
-                        <label
-                            for="name"
-                            class="w-full px-4 py-3  text-sm font-medium text-white peer-checked:bg-blue-500 rounded-l-lg">
-                            name
-                        </label>
-                    </div>
-                </li>
-
-                <li class="border-l border-gray-200">
-                    <div class="flex items-center">
-                        <input
-                            id="category"
-                            type="radio"
-                            value="category"
-                            name="sort"
-                            class="hidden peer"
-                            onChange={handleOptionChange}
-                        />
-                        <label
-                            for="category"
-                            class="w-full px-4  py-3  text-sm font-medium  text-white peer-checked:bg-blue-500 ">
-                            category
-                        </label>
-                    </div>
-                </li>
-
-                <li class="border-l border-gray-200">
-                    <div class="flex items-center">
-                        <input
-                            id="seperate"
-                            type="radio"
-                            value="seperate"
-                            name="sort"
-                            class="hidden peer"
-                            onChange={handleOptionChange}
-                        />
-                        <label
-                            for="seperate"
-                            class="w-full px-4  py-3  text-sm font-medium  text-white peer-checked:bg-blue-500 rounded-r-lg">
-                            seperated
-                        </label>
-                    </div>
-                </li>
+                {inputs.map((input, idx) => (
+                    <li key={input} class="border-gray-600">
+                        <div class="flex items-center">
+                            <input
+                                id={input}
+                                type="radio"
+                                value={input}
+                                name="sort"
+                                class="hidden peer"
+                                onChange={handleOptionChange}
+                            />
+                            <label
+                                for={input}
+                                class={`w-full px-4  py-3  text-sm font-medium  text-white peer-checked:bg-blue-500 cursor-pointer ${
+                                    idx + 1 === inputs.length
+                                        ? "rounded-r-lg"
+                                        : "border-r"
+                                } ${idx === 0 && "rounded-l-lg"}`}>
+                                {input}
+                            </label>
+                        </div>
+                    </li>
+                ))}
             </ul>
 
             <ItemList items={shoppingList} sortBy={sortBy} />
