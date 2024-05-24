@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import NewItem from "./NewItem";
+import NewItem from "../components/NewItem";
 import getCategories from "../utils/getCategories";
 import data from "../data/items.json";
 

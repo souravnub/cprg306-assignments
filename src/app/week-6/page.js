@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import NewItem from "../week-4/NewItem";
+import NewItem from "../components/NewItem";
 import data from "../data/items.json";
 import RadioGroup from "../components/RadioGroup";
-import ItemList from "../week-3/ItemList";
+import ItemList from "../components/ItemList";
 import getCategories from "../utils/getCategories";
 
 const Week6 = () => {

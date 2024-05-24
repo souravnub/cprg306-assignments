@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import ItemList from "../week-3/ItemList";
+import ItemList from "../components/ItemList";
 import shoppingList from "../data/items.json";
 import RadioGroup from "../components/RadioGroup";
 
