@@ -1,5 +1,5 @@
-import { getMeals } from "@/app/api/getMeals";
 import { useQuery } from "@tanstack/react-query";
+import { getMeals } from "../getMeals";
 
 export const getMealsQuery = (query) => {
     return useQuery({

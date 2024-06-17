@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import NewItem from "../components/NewItem";
-import getCategories from "../utils/getCategories";
-import data from "../data/items.json";
+import NewItem from "@/components/NewItem";
+import getCategories from "@/utils/getCategories";
+import data from "@/data/items.json";
 
 const Page = () => {
     function handleSubmit(e, item, clear) {

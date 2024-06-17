@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import QueryProvider from "./providers/queryProvider";
-import RecoilProvider from "./providers/recoilProvider";
+import RecoilProvider from "@/providers/recoilProvider";
+import QueryProvider from "@/providers/queryProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 

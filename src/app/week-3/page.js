@@ -1,6 +1,6 @@
+import ItemList from "@/components/ItemList";
+import shoppingList from "@/data/items.json";
 import React from "react";
-import ItemList from "../components/ItemList";
-import shoppingList from "../data/items.json";
 
 const Week3 = () => {
     return (

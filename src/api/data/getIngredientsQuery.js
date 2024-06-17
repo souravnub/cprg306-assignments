@@ -1,5 +1,5 @@
-import { getIngredients } from "@/app/api/getIngredients";
 import { useQuery } from "@tanstack/react-query";
+import { getIngredients } from "../getIngredients";
 
 export const getIngredientsQuery = (recipeId) => {
     return useQuery({

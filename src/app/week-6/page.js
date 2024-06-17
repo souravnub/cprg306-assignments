@@ -1,10 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import NewItem from "../components/NewItem";
-import data from "../data/items.json";
-import RadioGroup from "../components/RadioGroup";
-import ItemList from "../components/ItemList";
-import getCategories from "../utils/getCategories";
+import NewItem from "@/components/NewItem";
+import data from "@/data/items.json";
+import RadioGroup from "@/components/RadioGroup";
+import ItemList from "@/components/ItemList";
+import getCategories from "@/utils/getCategories";
 
 const Week6 = () => {
     const [list, setList] = useState(data);

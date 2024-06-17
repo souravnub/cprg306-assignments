@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import ItemList from "../components/ItemList";
-import shoppingList from "../data/items.json";
-import RadioGroup from "../components/RadioGroup";
+import ItemList from "@/components/ItemList";
+import shoppingList from "@/data/items.json";
+import RadioGroup from "@/components/RadioGroup";
 
 const Week5 = () => {
     const [sortBy, setSortBy] = useState(null);
