@@ -1,13 +1,17 @@
 "use client";
 import React from "react";
 import { useSetRecoilState } from "recoil";
-import { selectedMealName } from "../recoil/meals/atom";
+import { selectedMealName, selectedRecipeId } from "../recoil/meals/atom";
 
 const Item = ({ icon, name, quantity, category }) => {
     const setMealName = useSetRecoilState(selectedMealName);
+    const setRecpieId = useSetRecoilState(selectedRecipeId);
     return (
         <button
-            onClick={() => setMealName(name.split(",")[0])}
+            onClick={() => {
+                setMealName(name.split(",")[0]);
+                setRecpieId(null);
+            }}
             className="flex items-center justify-between px-4 py-3 bg-white border-b  border-gray-200 dark:bg-gray-950 dark:border-gray-800 hover:bg-gray-800">
             <div className="flex items-center space-x-4">
                 <div className="grid place-content-center text-2xl  w-[48px] aspect-square rounded-md dark:bg-slate-900 light:bg-neutral-100">
