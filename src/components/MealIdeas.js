@@ -2,12 +2,12 @@
 import React from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { selectedMealName, selectedRecipeId } from "../recoil/meals/atom";
-import { getMealsQuery } from "../api/data/getMealsQuery";
+import { useGetMeals } from "../api/data/useGetMeals";
 
 const MealIdeas = () => {
     const selectedIngredient = useRecoilValue(selectedMealName);
     const setRecpieId = useSetRecoilState(selectedRecipeId);
-    const { isError, isPending, data } = getMealsQuery(selectedIngredient);
+    const { isError, isPending, data } = useGetMeals(selectedIngredient);
 
     if (isPending) {
         return <>Loading..</>;

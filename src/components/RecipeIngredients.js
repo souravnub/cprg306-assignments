@@ -1,5 +1,5 @@
 import React from "react";
-import { getIngredientsQuery } from "../api/data/getIngredientsQuery";
+import { useGetIngredients } from "../api/data/useGetIngredients";
 import { selectedMealName, selectedRecipeId } from "../recoil/meals/atom";
 import { useRecoilValue } from "recoil";
 
@@ -7,7 +7,7 @@ const RecipeIngredients = () => {
     const recpieId = useRecoilValue(selectedRecipeId);
     const meal = useRecoilValue(selectedMealName);
 
-    const { isError, isPending, data } = getIngredientsQuery(recpieId);
+    const { isError, isPending, data } = useGetIngredients(recpieId);
 
     if (isPending) {
         return <>Loading..</>;
@@ -24,7 +24,7 @@ const RecipeIngredients = () => {
 
             <ul>
                 {data.extendedIngredients.map(({ original }) => (
-                    <li>{original}</li>
+                    <li key={original}>{original}</li>
                 ))}
             </ul>
         </div>
