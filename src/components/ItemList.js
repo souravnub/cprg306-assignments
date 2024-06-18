@@ -4,6 +4,10 @@ import seperateByCategories from "../utils/seperateByCategories";
 import sortItems from "../utils/sortItems";
 
 const ItemList = ({ items, sortBy = null }) => {
+    if (items.length === 0) {
+        return <p className="font-bold text-xl mt-2">No items to display</p>;
+    }
+
     if (sortBy === "seperate") {
         return seperateByCategories(items).map(({ items, category }) => {
             return (
