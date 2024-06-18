@@ -1,5 +1,6 @@
 "use client";
 import useAuth from "@/hooks/useAuth";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 
@@ -11,11 +12,12 @@ const Week8ShoppingList = () => {
         if (isAuthReady && !user) {
             router.push("/week-8");
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isAuthReady, user]);
 
     return (
         <div>
-            <img src={user.photoURL} alt="" />
+            <Image height={36} width={36} src={user?.photoURL} alt="" />
         </div>
     );
 };

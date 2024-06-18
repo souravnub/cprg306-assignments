@@ -2,6 +2,7 @@
 import useAuth from "@/hooks/useAuth";
 import { useLogin } from "@/hooks/useGithubLogin";
 import { useLogout } from "@/hooks/useGithubLogout";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -40,9 +41,11 @@ const Week8 = () => {
                 <h1 className="font-semibold text-xl">logged in as:</h1>
 
                 <div className="bg-slate-800 w-fit p-3 rounded-md">
-                    <img
+                    <Image
+                        width={36}
+                        height={36}
                         src={user.photoURL}
-                        className="max-w-9 rounded-full inline-block mr-4"
+                        className="rounded-full inline-block mr-4"
                         alt=""
                     />
                     <span>{user.email}</span>
