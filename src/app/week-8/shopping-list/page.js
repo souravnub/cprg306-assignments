@@ -1,4 +1,5 @@
 "use client";
+import Week7 from "@/app/week-7/page";
 import useAuth from "@/hooks/useAuth";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -17,7 +18,8 @@ const Week8ShoppingList = () => {
 
     return (
         <div>
-            <Image height={36} width={36} src={user?.photoURL} alt="" />
+            {/* <Image height={36} width={36} src={user?.photoURL} alt="" /> */}
+            <Week7 />
         </div>
     );
 };
